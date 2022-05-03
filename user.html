@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+  <title>配电房可视化总览</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="css/scanboard.css"/>
+  <link rel="stylesheet" type="text/css" href="css/icons.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+
+  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script> <!-- jQuery Library -->
+  <script src="http://www.jq22.com/jquery/jquery-ui-1.11.0.js"></script> <!-- jQuery UI -->
+  <script src="js/jquery.easing.1.3.js"></script> <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
+  <!-- Bootstrap -->
+  <script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+  <script src="js/charts/jquery.flot.js"></script> <!-- Flot Main -->
+  <script src="js/charts/jquery.flot.time.js"></script> <!-- Flot sub -->
+  <script src="js/charts/jquery.flot.animator.min.js"></script> <!-- Flot sub -->
+  <script src="js/charts/jquery.flot.resize.min.js"></script> <!-- Flot sub - for repaint when resizing the screen -->
+  <script src="js/otherChart.js"></script>
+
+  <script src="./js/lib/three.js"></script>
+  <script src="js/lib/LineSegments2.js"></script>
+  <script src="js/lib/LineSegmentsGeometry.js"></script>
+  <script src="js/lib/Line2.js"></script>
+  <script src="js/lib/LineGeometry.js"></script>
+  <script src="js/lib/LineMaterial.js"></script>
+  <script src="./js/lib/OrbitControls.js"></script>
+  <script src="./js/lib/ThreeBSP.js"></script>
+  <script src="js/lib/inflate.min.js"></script>
+  <script src="js/lib/FBXLoader.js"></script>
+  <script src="js/lib/DragControls.js"></script>
+  <script src="js/lib/TransformControls.js"></script>
+  <script src="js/lib/Tween.js"></script>
+</head>
+<body>
+<!--Top Start!-->
+<div class="scanboardWp animsition">
+  <div id="top">
+    <div class="wp clearfix">
+
+      <div class="left pageTit">
+        <!--					<a class="summaryBtn" href="javascript:;">领途物流汇总看板</a>-->
+      </div>
+      <div class="center topLogo">
+        <a href="#"><img src="images/logo.png"></a>
+      </div>
+      <div class="right topBar">
+        <div class="topTime">时间加载中...</div>
+        <div class="clearfix">
+          <a href="index.html" class="signOut fr">退出</a>
+          <div class="company fr">
+            <h3>常州供电公司</h3>
+            <div class="dropdown">
+              <a href="#">新北区</a>
+              <a href="#">清远机房</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!--Top End!-->
+  <!--Main Start!-->
+  <div id="main" class="wp clearfix">
+    <!--        左侧状态栏-->
+    <aside id="sidebar">
+      <ul class="list-unstyled side-menu">
+        <li class="active">
+          <a class="sa-side-home" href="scanboard.html">
+            <span class="menu-item">可视化总览</span>
+          </a>
+        </li>
+        <li>
+          <a class="sa-side-typography" href="keyInfo.html">
+            <span class="menu-item">数据检测</span>
+          </a>
+        </li>
+        <li>
+          <a class="sa-side-widget" href="deviceControl.html">
+            <span class="menu-item">设备控制</span>
+          </a>
+        </li>
+        <li>
+          <a class="sa-side-form" href="efficiencyAnalysis.html">
+            <span class="menu-item">监控管理</span>
+          </a>
+        </li>
+        <li>
+          <a class="sa-side-ui" href="dianfei.html">
+            <span class="menu-item">空间漫游</span>
+          </a>
+        </li>
+        <li>
+          <a class="sa-side-photos" href="deviceManager.html">
+            <span class="menu-item">告警管理</span>
+          </a>
+        </li>
+        <li>
+          <a class="sa-side-folder" href="energy_consumption.html">
+            <span class="menu-item">个人管理</span>
+          </a>
+        </li>
+        <li>
+          <a class="sa-side-calendar" href="userMng.html">
+            <span class="menu-item">用户管理</span>
+          </a>
+        </li>
+        <li class="dropdown">
+          <a class="sa-side-page" href="">
+            <span class="menu-item">系统设置</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <div class="center" style="width: 30%;color: white; margin: 0 auto;">
+      <div class="centerWp">
+        <!--中间大地图-->
+        <div class="itemTit">
+          <span class="border-blue" style="margin-left: -24px;">用户信息修改</span>
+        </div>
+        <div class="itemCon">
+          <form>
+            <div class="tt">
+              用户名
+            </div>
+            <div class="inpGroup">
+              <input type="text" name="" placeholder="张三">
+            </div>
+            <div class="tt">
+              电话
+            </div>
+            <div class="inpGroup">
+              <input type="text" name="" placeholder="13107341922">
+            </div>
+            <div class="tt">
+              部门
+            </div>
+            <div class="inpGroup">
+              <input type="text" name="" placeholder="供电局">
+            </div>
+            <div class="tt">
+              权限
+            </div>
+            <div class="inpGroup">
+              <input type="text" name="" placeholder="管理员">
+            </div>
+            <div class="tt">
+
+            </div>
+            <a href="index.html" class="animsition-link submit">确定</a>
+            <div class="tt">
+
+            </div>
+            <a href="index.html" class="animsition-link submit">取消</a>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="right" style="width: 30%;color: white; margin: 0 auto;">
+      <div class="item billState">
+        <div class="itemTit">
+          <span class="border-blue">修改密码</span>
+        </div>
+        <div class="itemCon">
+          <form>
+            <div class="tt">
+              原密码
+            </div>
+            <div class="inpGroup">
+              <input type="password" name="" placeholder="请输入您的原密码">
+            </div>
+            <div class="tt">
+              新密码
+            </div>
+            <div class="inpGroup">
+              <input type="password" name="" placeholder="请输入您的新密码">
+            </div>
+            <div class="tt">
+              确认密码
+            </div>
+            <div class="inpGroup">
+              <input type="password" name="" placeholder="请确认您的新密码">
+            </div>
+            <div class="prompt">
+              <p class="success">输入正确</p>
+            </div>
+            <a href="index.html" class="animsition-link submit">确定</a>
+            <div class="tt">
+
+            </div>
+            <a href="index.html" class="animsition-link submit">取消</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Main End!-->
+</div>
+<!--<canvas id="canvas" style="position: absolute;top: 0;left: 0;"></canvas>-->
+</body>
+<script type="text/javascript" src="js/bg.js"></script>
+<script type="text/javascript" src="js/scanboard.js"></script>
+<script type="text/javascript" src="js/fontscroll.js"></script>
+<script type="text/javascript" src="js/jquery.animsition.js"></script>
+<script type="text/javascript" src="js/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script src="js/AutoMat.js" charset="UTF-8"></script>
+<script src="js/AutoObj.js" charset="UTF-8"></script>
+<script src="js/Calculate.js"></script>
+<script src="js/DrawSketch.js" charset="UTF-8"></script>
+<script src="./js/index.js" charset="UTF-8"></script>
+</html>
+
